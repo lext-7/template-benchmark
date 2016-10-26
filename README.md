@@ -3,18 +3,18 @@
 ## Engines
 
 - [CoffeeKup](https://github.com/mauricemach/coffeekup) v0.3.1 ([website](http://coffeekup.org/))
-- [doT](https://github.com/olado/doT) v1.0.1 ([website](http://olado.github.com/doT/))
-- [Dust](https://github.com/linkedin/dustjs) v1.2.1 ([website](http://linkedin.github.com/dustjs/))
+- [doT](https://github.com/olado/doT) v1.0.3 ([website](http://olado.github.com/doT/))
+- [Dust](https://github.com/linkedin/dustjs) v2.7.4 ([website](http://linkedin.github.com/dustjs/))
 - [Eco](https://github.com/sstephenson/eco) v1.1.0-rc-3
-- [ECT](https://github.com/baryshev/ect) v0.4.8 ([website](http://ectjs.com/))
+- [ECT](https://github.com/baryshev/ect) v1.0.0 ([website](http://ectjs.com/))
 - [EJS](https://github.com/visionmedia/ejs) v0.8.3
-- [Fest](https://github.com/mailru/fest) v0.5.4
+- [Fest](https://github.com/mailru/fest) v0.12.1
 - [Gaikan](https://github.com/Deathspike/gaikan) v1.3.4
-- [Handlebars.js](https://github.com/wycats/handlebars.js/) v1.0.9 ([website](http://handlebarsjs.com/))
-- [Hogan.js](https://github.com/twitter/hogan.js) v2.0.0 ([website](http://twitter.github.com/hogan.js/))
+- [Handlebars.js](https://github.com/wycats/handlebars.js/) v4.0.5 ([website](http://handlebarsjs.com/))
+- [Hogan.js](https://github.com/twitter/hogan.js) v3.0.2 ([website](http://twitter.github.com/hogan.js/))
 - [Jade](https://github.com/visionmedia/jade) v0.28.1 ([website](http://jade-lang.com/))
 - [Swig](https://github.com/paularmstrong/swig) v0.13.5
-- [Underscore](https://github.com/documentcloud/underscore) v1.4.4 ([website](http://underscorejs.org/))
+- [Underscore](https://github.com/documentcloud/underscore) v1.8.3 ([website](http://underscorejs.org/))
 
 ## Test environment
 
@@ -24,86 +24,145 @@
 
 ## Results
 
-	Rendering 100000 templates:
+Compiling and rendering 100000 templates:
 
-	ECT
-	  Escaped   : 2180ms
-	  Unescaped : 133ms
-	  Total     : 2313ms
+Dust
+  Escaped compile time     : 35024ms
+  Escaped render time      : 2258ms
+  Unescaped compile time   : 35475ms
+  Unescaped render time    : 750ms
+  compile time             : 70499ms
+  render time              : 3008ms
+  Total                    : 73507ms
 
-	Dust
-	  Escaped   : 2547ms
-	  Unescaped : 363ms
-	  Total     : 2910ms
+Hogan.js
+  Escaped compile time     : 1308ms
+  Escaped render time      : 1683ms
+  Unescaped compile time   : 1307ms
+  Unescaped render time    : 285ms
+  compile time             : 2615ms
+  render time              : 1968ms
+  Total                    : 4583ms
 
-	Hogan.js
-	  Escaped   : 3252ms
-	  Unescaped : 758ms
-	  Total     : 4010ms
+Fest
+  Escaped compile time     : 152080ms
+  Escaped render time      : 1584ms
+  Unescaped compile time   : 167779ms
+  Unescaped render time    : 220ms
+  compile time             : 319859ms
+  render time              : 1804ms
+  Total                    : 321663ms
 
-	Gaikan
-	  Escaped   : 4288ms
-	  Unescaped : 85ms
-	  Total     : 4373ms
+Underscore
+  Escaped compile time     : 4966ms
+  Escaped render time      : 1980ms
+  Unescaped compile time   : 4862ms
+  Unescaped render time    : 1394ms
+  compile time             : 9828ms
+  render time              : 3374ms
+  Total                    : 13202ms
 
-	Fest
-	  Escaped   : 4179ms
-	  Unescaped : 265ms
-	  Total     : 4444ms
+EJS
+  Escaped compile time     : 9887ms
+  Escaped render time      : 4291ms
+  Unescaped compile time   : 10150ms
+  Unescaped render time    : 2474ms
+  compile time             : 20037ms
+  render time              : 6765ms
+  Total                    : 26802ms
 
-	EJS without `with`
-	  Escaped   : 4526ms
-	  Unescaped : 485ms
-	  Total     : 5011ms
+my EJS
+  Escaped compile time     : 7938ms
+  Escaped render time      : 3775ms
+  Unescaped compile time   : 7931ms
+  Unescaped render time    : 1939ms
+  compile time             : 15869ms
+  render time              : 5714ms
+  Total                    : 21583ms
 
-	doT
-	  Escaped   : 5329ms
-	  Unescaped : 82ms
-	  Total     : 5411ms
+Handlebars.js
+  Escaped compile time     : 1300ms
+  Escaped render time      : 1986ms
+  Unescaped compile time   : 1304ms
+  Unescaped render time    : 514ms
+  compile time             : 2604ms
+  render time              : 2500ms
+  Total                    : 5104ms
 
-	Swig
-	  Escaped   : 5020ms
-	  Unescaped : 407ms
-	  Total     : 5427ms
+Jade without `with`
+  Escaped compile time     : 71841ms
+  Escaped render time      : 1897ms
+  Unescaped compile time   : 71091ms
+  Unescaped render time    : 444ms
+  compile time             : 142932ms
+  render time              : 2341ms
+  Total                    : 145273ms
 
-	Underscore
-	  Escaped   : 5775ms
-	  Unescaped : 2486ms
-	  Total     : 8261ms
+CoffeeKup
+  Escaped compile time     : 136637ms
+  Escaped render time      : 2160ms
+  Unescaped compile time   : 137688ms
+  Unescaped render time    : 4498ms
+  compile time             : 274325ms
+  render time              : 6658ms
+  Total                    : 280983ms
 
-	Eco
-	  Escaped   : 8512ms
-	  Unescaped : 991ms
-	  Total     : 9503ms
+Jade
+  Escaped compile time     : 327211ms
+  Escaped render time      : 3708ms
+  Unescaped compile time   : 316174ms
+  Unescaped render time    : 2020ms
+  compile time             : 643385ms
+  render time              : 5728ms
+  Total                    : 649113ms
 
-	EJS
-	  Escaped   : 6316ms
-	  Unescaped : 2734ms
-	  Total     : 9050ms
+doT
+  Escaped compile time     : 4780ms
+  Escaped render time      : 1940ms
+  Unescaped compile time   : 4360ms
+  Unescaped render time    : 42ms
+  compile time             : 9140ms
+  render time              : 1982ms
+  Total                    : 11122ms
 
-	Handlebars.js
-	  Escaped   : 7815ms
-	  Unescaped : 2573ms
-	  Total     : 10388ms
+EJS without `with`
+  Escaped compile time     : 10207ms
+  Escaped render time      : 1985ms
+  Unescaped compile time   : 10440ms
+  Unescaped render time    : 485ms
+  compile time             : 20647ms
+  render time              : 2470ms
+  Total                    : 23117ms
 
-	Jade without `with`
-	  Escaped   : 8566ms
-	  Unescaped : 2982ms
-	  Total     : 11548ms
+my EJS without `with`
+  Escaped compile time     : 7402ms
+  Escaped render time      : 1526ms
+  Unescaped compile time   : 7615ms
+  Unescaped render time    : 116ms
+  compile time             : 15017ms
+  render time              : 1642ms
+  Total                    : 16659ms
 
-	CoffeeKup
-	  Escaped   : 4968ms
-	  Unescaped : 9983ms
-	  Total     : 14951ms
-
-	Jade
-	  Escaped   : 18330ms
-	  Unescaped : 12095ms
-	  Total     : 30425ms
+fast ejs
+  Escaped compile time     : 5608ms
+  Escaped render time      : 1424ms
+  Unescaped compile time   : 5575ms
+  Unescaped render time    : 63ms
+  compile time             : 11183ms
+  render time              : 1487ms
+  Total                    : 12670ms
+ECT                                                                                                                                                                 
+  Escaped compile time     : 96582ms                                                                                                                                
+  Escaped render time      : 33ms                                                                                                                                   
+  Unescaped compile time   : 95141ms                                                                                                                                
+  Unescaped render time    : 38ms                                                                                                                                   
+  compile time             : 191723ms                                                                                                                               
+  render time              : 71ms                                                                                                                                   
+  Total                    : 191794ms
 
 ## Usage
 
 	git clone git://github.com/baryshev/template-benchmark.git
 	cd template-benchmark
 	npm install
-	node ./benchmark.js
+	npm start

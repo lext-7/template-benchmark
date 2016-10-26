@@ -1,0 +1,3 @@
+[submodule "my-ejs"]
+	path = my-ejs
+	url = https://github.com/lext-7/ejs.git

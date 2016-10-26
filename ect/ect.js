@@ -4,6 +4,21 @@ var tplData;
 var tpl;
 
 renderer = new ECT({ root: __dirname, cache: true, debug: true });
+compiler = new ECT({ root: __dirname, cache: false, debug: true }); 
+
+module.exports.compile = function (data, done) {
+	tplData = data;
+	tpl = 'tpl_escaped.ect';
+	compiler.render(tpl, tplData);
+	done();
+};
+
+module.exports.compileUnescaped = function (data, done) {
+	tplData = data;
+	tpl = 'tpl_unescaped.ect';
+	compiler.render(tpl, tplData);
+	done();
+};
 
 module.exports.prepare = function (data, done) {
 	tplData = data;
